@@ -85,7 +85,7 @@ static bool receive(NWK_DataInd_t *ind) {
       //Buffer[i] = ind->data[i];
       bufferL[i] = ind->data[i];
     }
-    Serial.println(String(bufferL));
+    //Serial.println(String(bufferL));
     return true;
   } else {
     //Serial.println("Ciao ho ricevuto questo");
@@ -398,7 +398,8 @@ void ApioClass::loop() {
   if(!this->isDongle)
   {
 
-    fade(delFade, fadeOn);
+    //fade(delFade, fadeOn); /////ruiztech tolto per problemi
+    
     //This function backup the state of the object when the network goes down
     if(this->property=="hi"){
       for(int j = 0; j<indexReceived; j++)
@@ -478,7 +479,6 @@ void ApioClass::loop() {
 }
 
 void ApioClass::fade(int del, int flagFade){
-  /*
   if(flagFade){
     //Serial.println("I'm HERE");
     currMillis = millis();
@@ -504,7 +504,7 @@ void ApioClass::fade(int del, int flagFade){
     currMillis = millis();
     preMillis = currMillis;
   }
-*/
+
 }
 
 void ApioClass::goToSleep(uint32_t sleepForMs) {
@@ -822,9 +822,9 @@ void ApioClass::loadSettingsFromEeprom() {
 
 void ApioClass::meshSetRadio(const uint16_t theAddress, const uint16_t thePanId, const uint8_t theChannel) {
   if(theAddress==9999){
-    fadeOn=1;
+   // fadeOn=1;  ///ruiztech tolto per problemi
   } else {
-    fadeOn=0;
+   // fadeOn=0; ///ruiztech tolto per problemi
   }
   NWK_SetAddr(theAddress);
   address = theAddress;

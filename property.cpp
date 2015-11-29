@@ -14,6 +14,7 @@
 #include "StringBuffer.h"
 #include "String.h"
 
+
 ApioProperty property;
 
 ApioProperty::ApioProperty() {
@@ -31,6 +32,7 @@ void ApioProperty::Trigger(char *propertyName, int pin, int onValue, int offValu
     }
   }
 }
+
 
 void ApioProperty::Slider(String propertyName, int pin){
   if(Apio.property == propertyName){

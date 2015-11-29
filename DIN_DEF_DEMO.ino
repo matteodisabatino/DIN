@@ -166,7 +166,7 @@ dac.begin(1,1);  // 0 - (0-5v) | 1 - (0-10v) | 2 - (+/-5v) | 3 - (+/-10v) | 4 - 
 void loop(){    ////////////////////////////    LOOP     /////////////////    LOOP     /////////////////
 
 Apio.loop();
-//SYS_TaskHandler();
+SYS_TaskHandler();
 //CH1 = ADC20.getChannelV(1);
 
 AdcRead();
